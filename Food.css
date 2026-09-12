@@ -1,0 +1,221 @@
+/* ----- СБРОС И БАЗОВЫЕ НАСТРОЙКИ ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Serif', serif;
+  background-color: #e5f1f6;
+  color: #1e1e1e;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* ----- ШАПКА (HEADER) ----- */
+header {
+  background-color: #c2ccd3;
+  padding: 18px 30px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f3a3f;!!!!!!!!!!!!!
+  letter-spacing: -0.5px;
+}
+
+/* НАВИГАЦИЯ */
+nav {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-family: 'PT Serif', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #1a2631;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  color: #0e80be;
+  border-bottom-color: #0e80be;
+}
+
+
+main {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  background: #c2ccd3;
+  border-radius: 20px;
+  padding: 30px 30px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+section:last-child {
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1f3a3f;
+  margin-bottom: 18px;
+  letter-spacing: -0.3px;
+}
+
+.about-section img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 16px;
+  margin: 12px 0 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: block;
+}
+
+.about-section p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1f3a3f;
+  max-width: 700px;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* ----- ПРЕИМУЩЕСТВА (UL) ----- */
+.advantages-section ul {
+  list-style-type: none;
+  padding-left: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.advantages-section ul li {
+  font-size: 17px;
+  font-weight: 400;
+  color: #1e2e3a;
+  padding-left: 32px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="%231f93a8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 22px;
+}
+
+/* ----- ТАБЛИЦА (ТОП-5) ----- */
+.menu-section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.menu-section th,
+.menu-section td {
+  padding: 14px 18px;
+  text-align: left;
+  border: 1px solid #073050;
+}
+
+.menu-section th {
+  background-color: #85b2b4;
+  font-weight: 600;
+  color: #1f3a3f;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+
+.menu-section td {
+  background-color: #c2ccd3;
+}
+
+.menu-section tr:last-child td {
+  border-bottom: 1px solid #34129b;<!- #073050 ->
+}
+
+/* ----- ФУТЕР (ЧЕРНЫЙ ФОН) ----- */
+footer {
+  background-color: #0b0f12;
+  color: #ffffff;
+  padding: 28px 30px;
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 0 auto 10px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+footer p,
+footer a {
+  font-family: 'PT Serif', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #dbdbdb;
+}
+
+footer a {
+  text-decoration: none;
+  color: #a7eff5;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #469fc2;
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 15px;
+  color: #a8b2b9;
+}
+
+/* ----- АДАПТИВНЫЕ МЕЛОЧИ ----- */
+@media (max-width: 700px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  nav {
+    gap: 18px;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-section img {
+    max-width: 100%;
+  }
+}
