@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обратная связь — Food Construct</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="feedback.css">
+
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1 class="logo">Food Construct</h1>
+      <nav>
+        <a href="Food.html">На главную</a>
+        <a href="auth.html">Войти</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="feedback-section">
+      <h2>Форма обратной связи</h2>
+
+      <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label for="fn">ФИО</label>
+          <input id="fn" name="fullName" type="text" placeholder="Иванов Иван Иванович">
+        </div>
+
+        <div class="form-group">
+          <label for="em">Ваш адрес почты</label>
+          <input id="em" name="email" type="email" placeholder="example@mail.ru">
+        </div>
+
+        <div class="form-group">
+          <span class="label-text">Откуда Вы узнали о нас?</span>
+
+          <div class="radio-group">
+            <input name="about" type="radio" id="fr" value="friends" checked>
+            <label for="fr">Друзья</label>
+
+            <input name="about" type="radio" id="ad" value="advert">
+            <label for="ad">Реклама</label>
+
+            <input name="about" type="radio" id="ot" value="other">
+            <label for="ot">Другое</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cml">Категория обращения</label>
+          <select name="complainType" id="cml">
+            <option value="complaining">Жалоба</option>
+            <option value="suggestion">Предложение</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="txt">Текст сообщения</label>
+          <textarea id="txt" name="textAreaForm" rows="6" placeholder="Опишите ваш вопрос или предложение..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="flIn">Вложение</label>
+          <input type="file" id="flIn" name="file">
+        </div>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="cb" required>
+          <label for="cb">Даю согласие на обработку своих данных</label>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Отправить</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>Позвонить нам: <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+      <p class="copyright">© Food Construct, 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>
