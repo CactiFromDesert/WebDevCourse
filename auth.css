@@ -1,4 +1,3 @@
-/* ===== СБРОС ===== */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +12,6 @@ body {
   padding: 20px;
 }
 
-/* ===== ШАПКА ===== */
 header {
   background-color: #c2ccd3;
   padding: 18px 30px;
@@ -38,7 +36,6 @@ header {
   letter-spacing: -0.5px;
 }
 
-/* ===== НАВИГАЦИЯ ===== */
 nav {
   display: flex;
   gap: 28px;
@@ -61,7 +58,6 @@ nav a:hover {
   border-bottom-color: #0e80be;
 }
 
-/* ===== ОСНОВНОЙ БЛОК С ФОРМОЙ ===== */
 main {
   max-width: 480px;
   margin: 0 auto 40px;
@@ -80,7 +76,7 @@ h2 {
   letter-spacing: -0.3px;
 }
 
-/* ===== ГРУППЫ ПОЛЕЙ ===== */
+
 .form-group {
   margin-bottom: 18px;
 }
@@ -93,7 +89,6 @@ h2 {
   margin-bottom: 6px;
 }
 
-/* ===== ПОЛЯ ВВОДА ===== */
 .form-group input[type="text"],
 .form-group input[type="password"] {
   width: 100%;
@@ -114,7 +109,7 @@ h2 {
   background-color: #ffffff;
 }
 
-/* ===== ЧЕКБОКС ===== */
+
 .checkbox-group {
   display: flex;
   align-items: center;
@@ -134,7 +129,6 @@ h2 {
   cursor: pointer;
 }
 
-/* ===== КНОПКА ===== */
 .auth-section button {
   width: 100%;
   margin-top: 8px;
@@ -154,7 +148,6 @@ h2 {
   background-color: #0a6494;
 }
 
-/* ===== ФУТЕР ===== */
 footer {
   background-color: #0b0f12;
   color: #ffffff;
@@ -196,7 +189,6 @@ footer a:hover {
   color: #a8b2b9;
 }
 
-/* ===== АДАПТИВ ===== */
 @media (max-width: 700px) {
   .header-container {
     flex-direction: column;
