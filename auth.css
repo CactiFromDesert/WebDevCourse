@@ -1,4 +1,4 @@
-/*СБРОС*/
+/* ===== СБРОС ===== */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@ body {
   padding: 20px;
 }
 
-
+/* ===== ШАПКА ===== */
 header {
   background-color: #c2ccd3;
   padding: 18px 30px;
@@ -38,7 +38,7 @@ header {
   letter-spacing: -0.5px;
 }
 
-/* НАВИГАЦИЯ */
+/* ===== НАВИГАЦИЯ ===== */
 nav {
   display: flex;
   gap: 28px;
@@ -61,101 +61,100 @@ nav a:hover {
   border-bottom-color: #0e80be;
 }
 
-
+/* ===== ОСНОВНОЙ БЛОК С ФОРМОЙ ===== */
 main {
-  max-width: 1200px;
+  max-width: 480px;
   margin: 0 auto 40px;
   background: #c2ccd3;
   border-radius: 20px;
-  padding: 30px 30px 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-}
-
-section {
-  margin-bottom: 48px;
-}
-
-section:last-child {
-  margin-bottom: 10px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 h2 {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 700;
   color: #1f3a3f;
-  margin-bottom: 18px;
+  text-align: center;
+  margin-bottom: 28px;
   letter-spacing: -0.3px;
 }
 
-.about-section img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 16px;
-  margin: 12px 0 18px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+/* ===== ГРУППЫ ПОЛЕЙ ===== */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
   display: block;
-}
-
-.about-section p {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   color: #1f3a3f;
-  max-width: 700px;
-  margin-top: 6px;
-  line-height: 1.6;
+  margin-bottom: 6px;
 }
 
-.advantages-section ul {
-  list-style-type: none;
-  padding-left: 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.advantages-section ul li {
-  font-size: 17px;
-  font-weight: 400;
-  color: #1e2e3a;
-  padding-left: 32px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="%231f93a8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>');
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 22px;
-}
-
-.menu-section table {
+/* ===== ПОЛЯ ВВОДА ===== */
+.form-group input[type="text"],
+.form-group input[type="password"] {
   width: 100%;
-  border-collapse: collapse;
+  padding: 12px 16px;
+  font-family: 'PT Serif', serif;
+  font-size: 15px;
+  color: #1e1e1e;
+  background-color: #e5f1f6;
+  border: 1px solid #85b2b4;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+  border-color: #0e80be;
+  background-color: #ffffff;
+}
+
+/* ===== ЧЕКБОКС ===== */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0e80be;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* ===== КНОПКА ===== */
+.auth-section button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 20px;
+  font-family: 'PT Serif', serif;
   font-size: 16px;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.menu-section th,
-.menu-section td {
-  padding: 14px 18px;
-  text-align: left;
-  border: 1px solid #073050;
-}
-
-.menu-section th {
-  background-color: #85b2b4;
   font-weight: 600;
-  color: #1f3a3f;
-  font-size: 16px;
-  letter-spacing: 0.3px;
+  color: #ffffff;
+  background-color: #0e80be;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.menu-section td {
-  background-color: #c2ccd3;
+.auth-section button:hover {
+  background-color: #0a6494;
 }
 
-.menu-section tr:last-child td {
-  border-bottom: 1px solid #34129b;
-}
-
+/* ===== ФУТЕР ===== */
 footer {
   background-color: #0b0f12;
   color: #ffffff;
@@ -197,7 +196,7 @@ footer a:hover {
   color: #a8b2b9;
 }
 
-/* ----- АДАПТИВНЫЕ МЕЛОЧИ ----- */
+/* ===== АДАПТИВ ===== */
 @media (max-width: 700px) {
   .header-container {
     flex-direction: column;
@@ -210,8 +209,5 @@ footer a:hover {
   .footer-container {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .about-section img {
-    max-width: 100%;
   }
 }

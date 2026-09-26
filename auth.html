@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аутентификация — Food Construct</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css">
+
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1 class="logo">Food Construct</h1>
+      <nav>
+        <a href="Food.html">На главную</a>
+        <a href="feedback.html">Обратная связь</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <section class="auth-section">
+      <h2>Аутентификация</h2>
+
+      <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label for="log">Введите логин</label>
+          <input id="log" type="text" minlength="3" maxlength="20" placeholder="Ваш логин">
+        </div>
+
+        <div class="form-group">
+          <label for="pass">Введите пароль</label>
+          <input id="pass" type="password" minlength="8" maxlength="20" placeholder="Ваш пароль">
+        </div>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="cb">
+          <label for="cb">Запомнить меня</label>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Войти в аккаунт</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>Позвонить нам: <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+      <p class="copyright">© Food Construct, 2026</p>
+    </div>
+  </footer>
+
+</body>
+</html>
