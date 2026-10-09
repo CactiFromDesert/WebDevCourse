@@ -196,6 +196,55 @@ footer a:hover {
   }
 }
 
+/*ВЕРСИЯ ДЛЯ ПЕЧАТИ*/
+@media print {
+  header,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000;
+    padding: 0;
+  }
+
+  main {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .dish {
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: 1px solid #999;
+    transform: none !important;
+  }
+
+  .dish:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .dish button {
+    display: none;
+  }
+
+  .dishes {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  h2 {
+    color: #000000;
+    page-break-after: avoid;
+  }
+
+  .dish {
+    page-break-inside: avoid;
+  }
+}
+
 @media (max-width: 600px) {
   .header-container {
     flex-direction: column;
