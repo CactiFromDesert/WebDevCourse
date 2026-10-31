@@ -1,0 +1,113 @@
+* {
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 333; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 15px;
+}
+
+main {
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 29px;
+    font-weight: 470;
+}
+
+nav {
+    margin: 1px 3px 1px 3px;
+    padding: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a{
+    color:#000;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: pink;
+}
+
+nav a.active {
+    color: tomato;
+}
+
+img {
+    width: 680px;
+    height: 480px;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: 5px 5px 5px 0px;
+}
+
+th, td {
+    padding: 7px;
+    border: 1px solid #000;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    nav {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    main > img {
+        width: 500px;
+        height: auto;    
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        font-size: 17px;
+    }
+
+    main > img {
+        width: 100%;
+        height: auto;
+    }
+
+    table {
+        font-size: 13px; 
+    }
+}
+
+@media (max-width: 400px) {
+    table {
+        font-size: 11px; 
+    }
+}

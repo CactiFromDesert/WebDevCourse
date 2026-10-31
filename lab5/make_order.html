@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="order.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="print.css">
+        <title>Make order</title>
+    </head>
+    <body>
+        <header>
+            <h1>Выберите блюдо</h1>
+            <nav> 
+                <a href="index.html">Главная</a>
+                <a href="make_order.html" class="active">Сделать заказ</a>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>Выберите суп</h2>
+                <div class="filters">
+                    <button type="button" class="filter-btn" data-kind="fish">рыбный</button>
+                    <button type="button" class="filter-btn" data-kind="meat">мясной</button>
+                    <button type="button" class="filter-btn" data-kind="veg">вегетарианский</button>
+                </div>
+                <div class="dishes" id="soups-container"></div>
+            </section>
+
+            <section class="break">
+                <h2>Выберите главное блюдо</h2>
+                <div class="filters">
+                    <button type="button" class="filter-btn" data-kind="fish">рыбное</button>
+                    <button type="button" class="filter-btn" data-kind="meat">мясное</button>
+                    <button type="button" class="filter-btn" data-kind="veg">вегетарианское</button>
+                </div>
+                <div class="dishes" id="mains-container"></div>
+            </section>
+
+            <section class="break">
+                <h2>Выберите салат или стартер</h2>
+                <div class="filters">
+                    <button type="button" class="filter-btn" data-kind="fish">рыбный</button>
+                    <button type="button" class="filter-btn" data-kind="meat">мясной</button>
+                    <button type="button" class="filter-btn" data-kind="veg">вегетарианский</button>
+                </div>
+                <div class="dishes" id="salads-container"></div>
+            </section>
+
+            <section class="break">
+                <h2>Выберите напиток</h2>
+                <div class="filters">
+                    <button type="button" class="filter-btn" data-kind="cold">холодный</button>
+                    <button type="button" class="filter-btn" data-kind="hot">горячий</button>
+                </div>
+                <div class="dishes" id="drinks-container"></div>
+            </section>
+
+            <section class="break">
+                <h2>Выберите десерт</h2>
+                <div class="filters">
+                    <button type="button" class="filter-btn" data-kind="small">маленькая порция</button>
+                    <button type="button" class="filter-btn" data-kind="medium">средняя порция</button>
+                    <button type="button" class="filter-btn" data-kind="large">большая порция</button>
+                </div>
+                <div class="dishes" id="desserts-container"></div>
+            </section>
+            
+            <section id="order">
+                <h2>Сделать заказ</h2>
+                <form action="https://httpbin.org/post" method="POST">
+                    <h3>Ваш заказ</h3>
+                    <div id="order-empty">
+                        <p>Ничего не выбрано</p>
+                    </div>
+                    <div id="order-details" style="display: none;">
+                        <p><b>Суп</b><br><span id="order-item-soup">Блюдо не выбрано</span></p>
+                        <p><b>Главное блюдо</b><br><span id="order-item-main">Блюдо не выбрано</span></p>
+                        <p><b>Салат или стартер</b><br><span id="order-item-salad">Блюдо не выбрано</span></p>
+                        <p><b>Напиток</b><br><span id="order-item-drink">Напиток не выбран</span></p>
+                        <p><b>Десерт</b><br><span id="order-item-dessert">Десерт не выбран</span></p>
+                        <p><b>Стоимость заказа</b><br><span id="order-item-total">0₽</span></p>
+                    </div>
+
+                    <p>
+                        <label for="comment">Комментарии к заказу</label><br>
+                        <textarea id="comment" name="comment" rows="4"></textarea>
+                    </p>
+
+                    <h3>Ваши данные</h3>
+                    <p>
+                        <label for="name">Имя</label><br>
+                        <input type="text" id="name" name="name" required>
+                    </p>
+                    <p>
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="subscribe" name="subscribe" checked>
+                        <label for="subscribe">Получать информацию о скидках и акциях</label>
+                    </p>
+                    <p>
+                        <label for="phone">Номер телефона</label><br>
+                        <input type="tel" id="phone" name="phone" required>
+                    </p>
+                    <p>
+                        <label for="address">Адрес доставки</label><br>
+                        <input type="text" id="address" name="address" required><br>
+                        <small>Доставка осуществляется только по Москве</small>
+                    </p>
+                    <p>Время доставки:</p>
+                    <p>
+                        <label>
+                            <input type="radio" name="delivery_time" value="asap" checked>
+                            Как можно скорее
+                        </label><br>
+                        <label>
+                            <input type="radio" name="delivery_time" value="exact_time">
+                            К указанному времени
+                        </label>
+                    </p>
+                    <p>
+                        <button type="submit">Оформить заказ</button>
+                    </p>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <p id="contact">Позвонить нам +7 921-000-00-00</p>
+        </footer>
+        <script src="dishes.js"></script>
+        <script src="card.js"></script>
+    </body>
+</html>

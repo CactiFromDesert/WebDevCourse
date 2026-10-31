@@ -1,0 +1,31 @@
+@media print {
+    * {
+        box-shadow: none;
+        text-shadow: none;
+    }
+    body {
+        background-color: white;
+        color: black;
+        font-size: 12pt;
+    }
+
+    nav {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .TopPosition {
+        break-before: always;
+    }
+
+    .break {
+        break-before: always;
+    }
+}
+
+@page {
+    margin: 0;
+}
