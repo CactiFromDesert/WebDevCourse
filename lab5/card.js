@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dishElement = document.createElement('div');
         dishElement.classList.add('dish');
         dishElement.setAttribute('data-dish', dish.keyword);
-        dishElement.setAttribute('data-kind', dish.kind);   // ← для фильтра
+        dishElement.setAttribute('data-kind', dish.kind);
 
         dishElement.innerHTML = `
             <img src="${dish.image}" alt="Изображение ${dish.name}">
@@ -53,8 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateOrderUI = () => {
-        const hasOrder = order.soup || order.main || order.salad
-                      || order.drink || order.dessert;
+        const hasOrder = order.soup || order.main || order.salad || order.drink || order.dessert;
 
         const emptyDiv   = document.getElementById('order-empty');
         const detailsDiv = document.getElementById('order-details');
