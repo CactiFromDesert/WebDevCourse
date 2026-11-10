@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформить заказ — Food Construct</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Food.css">
+  <link rel="stylesheet" href="order.css">
+  <style>
+    .checkout-layout { display: grid; grid-template-columns: 260px 1fr; gap: 32px; align-items: start; }
+    .checkout-summary { background: #e5f1f6; border-radius: 16px; padding: 20px; }
+    .checkout-summary p { margin-bottom: 14px; font-size: 15px; }
+    .checkout-summary .order-total span { font-size: 20px; color: #0e80be; font-weight: 700; }
+    .composition-empty { background: #e5f1f6; padding: 24px; border-radius: 16px; font-size: 16px; text-align: center; }
+    @media (max-width: 800px) { .checkout-layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1 class="logo">Food Construct</h1>
+      <nav>
+        <a href="Food.html">Главная</a>
+        <a href="auth.html">Войти</a>
+        <a href="feedback.html">Обратная связь</a>
+        <a href="order.html">Собрать ланч</a>
+        <a href="checkout.html" class="active">Оформить заказ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Состав заказа</h2>
+      <div id="composition-empty" class="composition-empty" hidden>
+        Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на <a href="order.html">Собрать ланч</a>.
+      </div>
+      <div id="composition-list" class="dishes"></div>
+    </section>
+
+    <section class="order-section">
+      <h2>Оформление заказа</h2>
+      <form id="checkout-form" action="https://edu.std-900.ist.mospolytech.ru/labs/api/orders" method="POST">
+        
+        <div class="checkout-layout">
+          <div class="checkout-summary">
+            <p><b>Суп</b><br><span id="sum-soup">Не выбран</span></p>
+            <p><b>Главное блюдо</b><br><span id="sum-main">Не выбрано</span></p>
+            <p><b>Салат или стартер</b><br><span id="sum-salad">Не выбран</span></p>
+            <p><b>Напиток</b><br><span id="sum-drink">Не выбран</span></p>
+            <p><b>Десерт</b><br><span id="sum-dessert">Не выбран</span></p>
+            <p class="order-total"><b>Итого</b><br><span id="sum-total">0₽</span></p>
+          </div>
+
+          <div>
+            <input type="hidden" name="api_key" value="ВАШ_API_KEY">
+            
+            <div class="form-group">
+              <label for="comment">Комментарий к заказу</label>
+              <textarea id="comment" name="comment" rows="3" placeholder="Пожелания..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="name">Имя*</label>
+              <input type="text" id="name" name="full_name" required placeholder="Имя Фамилия">
+            </div>
+            <div class="form-group">
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+            </div>
+            <div class="form-group">
+              <label for="phone">Номер телефона*</label>
+              <input type="tel" id="phone" name="phone" required placeholder="+7 000 000-00-00">
+            </div>
+            <div class="form-group">
+              <label for="address">Адрес доставки*</label>
+              <input type="text" id="address" name="address" required placeholder="Улица, дом...">
+            </div>
+            <div class="form-group">
+              <span class="label-text">Время доставки*</span>
+              <div class="radio-group">
+                <input type="radio" name="delivery_type" id="dt-asap" value="asap" checked>
+                <label for="dt-asap">Как можно скорее</label>
+                <input type="radio" name="delivery_type" id="dt-exact" value="exact_time">
+                <label for="dt-exact">К указанному времени</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit">Отправить</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>Позвонить нам: <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+      <p class="copyright">© Food Construct, 2026</p>
+    </div>
+  </footer>
+
+  <script src="dishes.js"></script>
+  <script src="combo.js"></script>
+  <script src="storage.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>
