@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Собрать ланч — Food Construct</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Food.css">
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1 class="logo">Food Construct</h1>
+      <nav>
+        <a href="Food.html#about">О нас</a>
+        <a href="order.html" class="active">Собрать ланч</a>
+        <a href="checkout.html">Оформить заказ</a>
+        <a href="history.html">Заказы</a>
+        <a href="Food.html#footer">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Выберите суп</h2>
+      <div class="filters">
+        <button type="button" class="filter-btn" data-kind="fish">рыбный</button>
+        <button type="button" class="filter-btn" data-kind="meat">мясной</button>
+        <button type="button" class="filter-btn" data-kind="veg">вегетарианский</button>
+      </div>
+      <div class="dishes" id="soups-container"></div>
+    </section>
+
+    <section>
+      <h2>Выберите главное блюдо</h2>
+      <div class="filters">
+        <button type="button" class="filter-btn" data-kind="fish">рыбное</button>
+        <button type="button" class="filter-btn" data-kind="meat">мясное</button>
+        <button type="button" class="filter-btn" data-kind="veg">вегетарианское</button>
+      </div>
+      <div class="dishes" id="mains-container"></div>
+    </section>
+
+    <section>
+      <h2>Выберите салат или стартер</h2>
+      <div class="filters">
+        <button type="button" class="filter-btn" data-kind="fish">рыбный</button>
+        <button type="button" class="filter-btn" data-kind="meat">мясной</button>
+        <button type="button" class="filter-btn" data-kind="veg">вегетарианский</button>
+      </div>
+      <div class="dishes" id="salads-container"></div>
+    </section>
+
+    <section>
+      <h2>Выберите напиток</h2>
+      <div class="filters">
+        <button type="button" class="filter-btn" data-kind="cold">холодный</button>
+        <button type="button" class="filter-btn" data-kind="hot">горячий</button>
+      </div>
+      <div class="dishes" id="drinks-container"></div>
+    </section>
+
+    <section>
+      <h2>Выберите десерт</h2>
+      <div class="filters">
+        <button type="button" class="filter-btn" data-kind="small">маленькая порция</button>
+        <button type="button" class="filter-btn" data-kind="medium">средняя порция</button>
+        <button type="button" class="filter-btn" data-kind="large">большая порция</button>
+      </div>
+      <div class="dishes" id="desserts-container"></div>
+    </section>
+  </main>
+
+  <div id="checkout-panel" class="checkout-panel" hidden>
+    <div class="checkout-panel__info">
+      <span class="checkout-panel__label">Стоимость заказа:</span>
+      <span id="checkout-total" class="checkout-panel__total">0₽</span>
+    </div>
+    <a id="checkout-link" class="checkout-panel__link disabled" href="#" aria-disabled="true">
+      Перейти к оформлению
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>Позвонить нам: <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+      <p class="copyright">© Food Construct, 2026</p>
+    </div>
+  </footer>
+
+  <script src="dishes.js"></script>
+  <script src="combo.js"></script>
+  <script src="storage.js"></script>
+  <script src="card.js"></script>
+</body>
+</html>

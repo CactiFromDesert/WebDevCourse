@@ -1,0 +1,43 @@
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.checkout-summary {
+    background: #e5f1f6;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.checkout-summary p {
+    margin-bottom: 14px;
+    font-size: 15px;
+}
+
+.checkout-summary .order-total span {
+    font-size: 20px;
+    color: #0e80be;
+    font-weight: 700;
+}
+
+.composition-empty {
+    background: #e5f1f6;
+    padding: 24px;
+    border-radius: 16px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.composition-empty a { color: #0e80be; }
+
+.checkout-composition .dishes {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+@media (max-width: 800px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+}
