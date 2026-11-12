@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>История заказов — Food Construct</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Food.css">
+  <link rel="stylesheet" href="history.css">
+  <!-- Bootstrap Icons для иконок действий -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1 class="logo">Food Construct</h1>
+      <nav>
+        <a href="landing.html">Главная</a>
+        <a href="Food.html#about">О нас</a>
+        <a href="order.html">Собрать ланч</a>
+        <a href="checkout.html">Оформить заказ</a>
+        <a href="history.html" class="active">Заказы</a>
+        <a href="Food.html#footer">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>История заказов</h2>
+      <div id="orders-loading" class="loading-state">Загрузка заказов...</div>
+      <div id="orders-error" class="error-state" hidden></div>
+      
+      <div id="orders-table-wrapper" hidden>
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Дата оформления</th>
+              <th>Состав заказа</th>
+              <th>Стоимость</th>
+              <th>Время доставки</th>
+              <th>Действия</th>
+            </tr>
+          </thead>
+          <tbody id="orders-tbody">
+            <!-- Строки будут добавлены через JS -->
+          </tbody>
+        </table>
+      </div>
+      
+      <div id="orders-empty" class="empty-state" hidden>
+        У вас пока нет оформленных заказов. <a href="order.html">Собрать ланч</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>Позвонить нам: <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+      <p class="copyright">© Food Construct, 2026</p>
+    </div>
+  </footer>
+
+  <!-- Модальное окно "Подробнее" -->
+  <div id="modal-view" class="modal-overlay" hidden>
+    <div class="modal-content">
+      <button class="modal-close" data-close="modal-view">&times;</button>
+      <h3>Информация о заказе</h3>
+      <div id="view-content" class="modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" data-close="modal-view">Ок</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно "Редактирование" -->
+  <div id="modal-edit" class="modal-overlay" hidden>
+    <div class="modal-content modal-wide">
+      <button class="modal-close" data-close="modal-edit">&times;</button>
+      <h3>Редактирование заказа</h3>
+      <form id="edit-form" class="modal-body">
+        <div class="form-group">
+          <label for="edit-full_name">Имя*</label>
+          <input type="text" id="edit-full_name" name="full_name" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-email">Email*</label>
+          <input type="email" id="edit-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-phone">Номер телефона*</label>
+          <input type="tel" id="edit-phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-delivery_address">Адрес доставки*</label>
+          <input type="text" id="edit-delivery_address" name="delivery_address" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-delivery_type">Время доставки*</label>
+          <select id="edit-delivery_type" name="delivery_type" required>
+            <option value="asap">Как можно скорее</option>
+            <option value="exact_time">К указанному времени</option>
+          </select>
+        </div>
+        <div class="form-group" id="edit-time-group">
+          <label for="edit-delivery_time">Время доставки</label>
+          <input type="time" id="edit-delivery_time" name="delivery_time">
+        </div>
+        <div class="form-group">
+          <label for="edit-comment">Комментарий</label>
+          <textarea id="edit-comment" name="comment" rows="3"></textarea>
+        </div>
+      </form>
+      <div class="modal-actions">
+        <button type="button" class="btn-primary" id="btn-save-edit">Сохранить</button>
+        <button type="button" class="btn-secondary" data-close="modal-edit">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно "Удаление" -->
+  <div id="modal-delete" class="modal-overlay" hidden>
+    <div class="modal-content">
+      <button class="modal-close" data-close="modal-delete">&times;</button>
+      <h3>Подтверждение удаления</h3>
+      <div class="modal-body">
+        <p>Вы уверены, что хотите удалить этот заказ?</p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-danger" id="btn-confirm-delete">Да</button>
+        <button type="button" class="btn-secondary" data-close="modal-delete">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Уведомления -->
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="dishes.js"></script>
+  <script src="history.js"></script>
+</body>
+</html>

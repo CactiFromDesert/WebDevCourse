@@ -1,0 +1,259 @@
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin-top: 10px;
+  background: #c2ccd3;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #a4b4be;
+  vertical-align: top;
+}
+
+.orders-table th {
+  background-color: #85b2b4;
+  font-weight: 600;
+  color: #1f3a3f;
+}
+
+.orders-table tr:last-child td {
+  border-bottom: none;
+}
+
+.order-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.order-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #0e80be;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-actions button:hover {
+  background-color: #e5f1f6;
+  color: #0a6494;
+}
+
+.order-actions button.btn-delete:hover {
+  color: #c0392b;
+}
+
+.loading-state, .empty-state, .error-state {
+  padding: 30px;
+  text-align: center;
+  font-size: 16px;
+  background: #e5f1f6;
+  border-radius: 16px;
+  color: #1f3a3f;
+}
+
+.error-state {
+  color: #c0392b;
+  background: #fdecea;
+  border: 1px solid #f5c6cb;
+}
+
+.empty-state a {
+  color: #0e80be;
+  text-decoration: underline;
+}
+
+/* modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-overlay[hidden] {
+  display: none !important;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal-wide {
+  max-width: 600px;
+}
+
+.modal-content h3 {
+  margin: 0;
+  padding: 20px 24px 10px;
+  font-size: 20px;
+  color: #1f3a3f;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.modal-close:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+.modal-body {
+  padding: 10px 24px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-body p {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.modal-body b {
+  color: #1f3a3f;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 16px 24px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+  border-radius: 0 0 16px 16px;
+}
+
+.modal-actions button {
+  padding: 10px 22px;
+  font-family: 'PT Serif', serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn-primary {
+  background-color: #0e80be;
+  color: #fff;
+}
+.btn-primary:hover { background-color: #0a6494; }
+
+.btn-secondary {
+  background-color: #e5f1f6;
+  color: #1f3a3f;
+}
+.btn-secondary:hover { background-color: #d1e3ea; }
+
+.btn-danger {
+  background-color: #c0392b;
+  color: #fff;
+}
+.btn-danger:hover { background-color: #a93226; }
+
+.modal-body .form-group {
+  margin-bottom: 14px;
+}
+
+.modal-body label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f3a3f;
+  margin-bottom: 5px;
+}
+
+.modal-body input,
+.modal-body select,
+.modal-body textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: 'PT Serif', serif;
+  font-size: 15px;
+  background: #e5f1f6;
+  border: 1px solid #85b2b4;
+  border-radius: 10px;
+  outline: none;
+}
+
+.modal-body input:focus,
+.modal-body select:focus,
+.modal-body textarea:focus {
+  border-color: #0e80be;
+  background: #fff;
+}
+
+/*toast*/
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f3a3f;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  z-index: 2000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  max-width: 90%;
+  text-align: center;
+  animation: toast-in 0.3s ease;
+}
+
+.toast.error {
+  background-color: #c0392b;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@media (max-width: 768px) {
+  .orders-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
